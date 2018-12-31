@@ -1,8 +1,22 @@
-export default function MessageTypeContainer ({ messageTypes }) {
-	return {
-		messageTypes: () => messageTypes,
-		messageTypeValues: () => messageTypes.map(msgType => msgType.value()),
-		byValue: (value) => messageTypes.find(msgType => msgType.value() === value),
-		byName: (name) => messageTypes.find(msgType => msgType.name() === name),
+export default class MessageTypeContainer {
+
+	constructor (messageTypes) {
+		this._messageTypes = messageTypes
+	}
+
+	messageTypes () {
+		return this._messageTypes
+	}
+
+	messageTypeValues () {
+		return this._messageTypes.map(msgType => msgType.msgType())
+	}
+
+	byMsgType (value) {
+		return this._messageTypes.find(msgType => msgType.msgType() === value)
+	}
+
+	byName (name) {
+		return this._messageTypes.find(msgType => msgType.name() === name)
 	}
 }
