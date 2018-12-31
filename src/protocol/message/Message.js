@@ -66,14 +66,14 @@ export default class Message {
 	}
 
 	withField (field) {
-		messageStringGenerated = false
+		this.messageStringGenerated = false
 
-		if (dictionary.structure().header().byValue(field.tag())) {
+		if (this.dictionary.structure().header().byValue(field.tag())) {
 			this.addHeaderField(field)
 			return
 		}
 
-		if (dictionary.structure().trailer().byValue(field.tag())){
+		if (this.dictionary.structure().trailer().byValue(field.tag())){
 			this.addTrailerField(field)
 			return
 		}
@@ -102,7 +102,7 @@ export default class Message {
 		)
 
 		return Array.from(messageMap.values())
-		.map(field => field.toString())
-		.join('')
+			.map(field => field.toString())
+			.join('')
 	}
 }
