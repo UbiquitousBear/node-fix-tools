@@ -6,7 +6,7 @@
   "author": "Shamil Nunhuck (shamil@shamil.co.uk)",
   "license": "MIT",
   "scripts": {
-    "test": " ./node_modules/mocha/bin/mocha --compilers js:@babel/register --recursive test/"
+    "test": "./node_modules/mocha/bin/mocha --compilers js:@babel/register --recursive test/"
   },
   "dependencies": {
     "expect.js": "^0.3.1",
