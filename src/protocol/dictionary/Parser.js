@@ -14,7 +14,7 @@ export function parseToDictionary ({ data }) {
 		
 	data.tags.forEach(
 		element => tags.push(
-			new Tag({ value: element.tag, name: element.name })
+			new Tag(element.tag, element.name)
 		)
 	)
 
@@ -25,13 +25,13 @@ export function parseToDictionary ({ data }) {
 
 	data.structure.header.forEach(
 		element => structureHeaderTags.push(
-			new Tag({ value: element.tag, name: element.name })
+			new Tag(element.tag, element.name)
 		)
 	)
 
 	data.structure.trailer.forEach(
 		element => structureTrailerTags.push(
-			new Tag({ value: element.tag, name: element.name })
+			new Tag(element.tag, element.name)
 		)
 	)
 
@@ -43,10 +43,10 @@ export function parseToDictionary ({ data }) {
 		dialectName: data.dialect_name,
 		versionString: data.fix_version,
 		structure: new Structure({
-			header: new TagContainer({ tags: structureHeaderTags }),
-			trailer: new TagContainer({ tags: structureTrailerTags })
+			header: new TagContainer(structureHeaderTags),
+			trailer: new TagContainer(structureTrailerTags)
 		}),
-		tags: new TagContainer({ tags }),
+		tags: new TagContainer(tags),
 		messageTypes: new MessageTypeContainer({ messageTypes }),
 		sessionMessageTypes
 	})
