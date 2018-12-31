@@ -39,15 +39,15 @@ export function parseToDictionary (definition) {
 		element => sessionMessageTypes.push(element)
 	)
 
-	return new Dictionary({
-		dialectName: definition.dialect_name,
-		versionString: definition.fix_version,
-		structure: new Structure({
+	return new Dictionary(
+		definition.dialect_name,
+		definition.fix_version,
+		new Structure({
 			header: new TagContainer(structureHeaderTags),
 			trailer: new TagContainer(structureTrailerTags)
 		}),
-		tags: new TagContainer(tags),
-		messageTypes: new MessageTypeContainer(messageTypes),
+		new TagContainer(tags),
+		new MessageTypeContainer(messageTypes),
 		sessionMessageTypes
-	})
+	)
 }
