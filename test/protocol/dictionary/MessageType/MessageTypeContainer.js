@@ -4,7 +4,7 @@ import MessageType
 import MessageTypeContainer
 	from '../../../../src/protocol/dictionary/MessageType/MessageTypeContainer'
 
-describe('MessageTypeContainer', () => {
+describe('Dictionary MessageTypeContainer', () => {
 	let container, messageTypes
 
 	before(() => {

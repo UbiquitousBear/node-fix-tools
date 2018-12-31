@@ -1,7 +1,7 @@
 import expect from 'expect.js'
 import Tag from '../../../../src/protocol/dictionary/Tag/Tag'
 
-describe('Tag', () => {
+describe('Dictionary Tag', () => {
 
 	const tag = new Tag('foo', 'bar')
 
