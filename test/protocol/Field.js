@@ -7,7 +7,7 @@ describe('Field', () => {
 
 	// arrange & act
 	before(() => {
-		field = new Field({tag: new Tag({ value: 3, name: 'Test'}), value: 'test'})
+		field = new Field({tag: new Tag(3, 'Test'), value: 'test'})
 	})
 	it('should return the correct tag', () => {
 		// assert

@@ -9,9 +9,18 @@ export const TagNames = {
 	TargetCompID: 'TargetCompID'
 }
 
-export default function Tag ({ value, name }) {
-	return {
-		value: () => value,
-		name: () => name
+export default class Tag {
+
+	constructor(value, name) {
+		this._name = name
+		this._value = value
+	}
+
+	name () {
+		return this._name
+	}
+
+	value () {
+		return this._value
 	}
 }
