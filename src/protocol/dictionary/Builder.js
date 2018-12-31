@@ -12,4 +12,4 @@ export const buildDictionaryFromDefinitionFile = file =>
 	new Promise((resolve, reject) =>
 		fs.readFile(file, (err, data) => err ? reject(err) : resolve(data)))
 		.then(data => yaml.safeLoad(data))
-		.then(yamlDefinition => parseToDictionary({ data: yamlDefinition }))
+		.then(yamlDefinition => parseToDictionary(yamlDefinition))

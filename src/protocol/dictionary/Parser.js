@@ -5,49 +5,49 @@ import MessageType from './MessageType/MessageType'
 import MessageTypeContainer from './MessageType/MessageTypeContainer'
 import Structure from './Structure'
 
-export function parseToDictionary ({ data }) {
+export function parseToDictionary (definition) {
 	let tags = [],
 		messageTypes = [],
 		sessionMessageTypes = [],
 		structureHeaderTags = [],
 		structureTrailerTags = []
 		
-	data.tags.forEach(
+	definition.tags.forEach(
 		element => tags.push(
 			new Tag(element.tag, element.name)
 		)
 	)
 
-	data.message_types.forEach(
+	definition.message_types.forEach(
 		element => messageTypes.push(
 			new MessageType({ msgType: element.msgType, name: element.name }))
 	)
 
-	data.structure.header.forEach(
+	definition.structure.header.forEach(
 		element => structureHeaderTags.push(
 			new Tag(element.tag, element.name)
 		)
 	)
 
-	data.structure.trailer.forEach(
+	definition.structure.trailer.forEach(
 		element => structureTrailerTags.push(
 			new Tag(element.tag, element.name)
 		)
 	)
 
-	data.session_message_types.forEach(
+	definition.session_message_types.forEach(
 		element => sessionMessageTypes.push(element)
 	)
 
 	return new Dictionary({
-		dialectName: data.dialect_name,
-		versionString: data.fix_version,
+		dialectName: definition.dialect_name,
+		versionString: definition.fix_version,
 		structure: new Structure({
 			header: new TagContainer(structureHeaderTags),
 			trailer: new TagContainer(structureTrailerTags)
 		}),
 		tags: new TagContainer(tags),
-		messageTypes: new MessageTypeContainer({ messageTypes }),
+		messageTypes: new MessageTypeContainer(messageTypes),
 		sessionMessageTypes
 	})
 }
