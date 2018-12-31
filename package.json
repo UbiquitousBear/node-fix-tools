@@ -1,0 +1,23 @@
+{
+  "name": "node-fix-tools",
+  "version": "1.0.0",
+  "description": "FIX Messaging toolkit for NodeJS",
+  "main": "server.js",
+  "author": "Shamil Nunhuck (shamil@shamil.co.uk)",
+  "license": "MIT",
+  "scripts": {
+    "test": " ./node_modules/mocha/bin/mocha --compilers js:@babel/register --recursive test/"
+  },
+  "dependencies": {
+    "expect.js": "^0.3.1",
+    "js-yaml": "^3.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "mocha": "^5.2.0"
+  }
+}
