@@ -1,2 +1,2 @@
 # node-fix-tools
-FIX Messaging toolk
+FIX Messaging toolkit for Node
