@@ -9,6 +9,7 @@ describe('Field', () => {
 	before(() => {
 		field = new Field({tag: new Tag(3, 'Test'), value: 'test'})
 	})
+	
 	it('should return the correct tag', () => {
 		// assert
 		expect(field.tag().value()).to.equal(3)

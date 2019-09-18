@@ -42,10 +42,10 @@ export function parseToDictionary (definition) {
 	return new Dictionary(
 		definition.dialect_name,
 		definition.fix_version,
-		new Structure({
-			header: new TagContainer(structureHeaderTags),
-			trailer: new TagContainer(structureTrailerTags)
-		}),
+		new Structure(
+			new TagContainer(structureHeaderTags),
+			new TagContainer(structureTrailerTags)
+		),
 		new TagContainer(tags),
 		new MessageTypeContainer(messageTypes),
 		sessionMessageTypes

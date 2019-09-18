@@ -2,7 +2,7 @@ import expect from 'expect.js'
 import MessageType 
 	from '../../../../src/protocol/dictionary/MessageType/MessageType'
 
-describe('MessageType', () => {
+describe('Dictionary MessageType', () => {
 
 	const messageType = new MessageType('A', 'Logon')
 	

@@ -1,7 +1,7 @@
 import expect from 'expect.js'
-import Message from './../../src/protocol/message/Message'
-import MessageType from '../../src/protocol/dictionary/MessageType/MessageType'
-import { fromFilePath } from './../../src/protocol/dictionary/Builder'
+import Message from './../../../src/protocol/message/Message'
+import MessageType from '../../../src/protocol/dictionary/MessageType/MessageType'
+import { fromFilePath } from './../../../src/protocol/dictionary/Builder'
 
 describe('Message', () => {
 
